@@ -152,10 +152,10 @@ const actions = [
         name: 'Meet a crime boss.',
         maxRep: -30,
         minRep: -5,
-        successMsg: ["The crime boss talked to you about a possible future at their organization.", "The crime boss was pleased with your initiative in meeting him.", "The crime boss asked you to 'Expect a call from them' after the meet."],
+        successMsg: ["The crime boss hired you to be a hitman for the mafia."],
         failMsg: ["The crime boss refused to meet with you.", "The crime boss called you a 'Pathetic wimp' and refused to even look at you.", "The crime lord showed up to the meeting, threatened you, then left."],
-        condition: "currentRep <= -200 && currentYear >= 22",
-        successFunction: "",
+        condition: "currentRep <= -200 && currentYear >= 22 && currentJob.title == 'Unemployed'",
+        successFunction: "currentJob = {company: 'Mafia',title: 'Hitman',salary: 200000,turnover: 'getRandomNumber(0, 10) >= 7',intelligenceAmount: 0,}",
     },
     {
         name: 'Find a job.',
@@ -174,6 +174,24 @@ const actions = [
         failMsg: ["You did not understand a thing that was said to you."],
         condition: "",
         successFunction: "intelligence += getRandomNumber(5, 1)",
+    },
+    {
+        name: 'Kill a rival gang leader.',
+        maxRep: -100,
+        minRep: -20,
+        successMsg: ["You killed the gang leader."],
+        failMsg: ["You failed to kill the leader."],
+        condition: "currentJob.company == 'Mafia'",
+        successFunction: "notoriety += 10",
+    },
+    {
+        name: 'Steal a car for the Mafia.',
+        maxRep: -30,
+        minRep: -20,
+        successMsg: ["You stole a BMW for the Mafia", "You stole a Honda Civic for the Mafia.", "You stole a Porsche for the Mafia."],
+        failMsg: ["You nearly got caught, but escaped."],
+        condition: "currentJob.company == 'Mafia'",
+        successFunction: "notoriety += 2",
     },
 ];
 
