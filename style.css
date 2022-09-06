@@ -1,0 +1,82 @@
+
+/* MISC */
+
+:root {
+    --negative: rgb(226, 68, 68);
+    --positive: rgb(91, 190, 91);
+    --negative-2: rgb(221, 49, 49);
+    --positive-2: rgb(107, 197, 107);
+}
+
+@font-face {
+    font-family: JoganSoft;
+    src: url("fonts/JoganSoft.otf") format("opentype");
+}
+
+/* REAL CSS */
+
+body {
+    margin: 0;
+    font-family: 'JoganSoft';
+}
+
+.main {
+    height: calc(100vh - 20px);
+    width: calc(100vw - 20px);
+    margin: 10px;
+    display: flex;
+    flex-flow: column;
+}
+
+.top {
+    flex: 1;
+    font-size: 1.3em;
+    margin: 0;
+    margin-right: 5vw;
+    margin-left: 5vw;
+}
+
+.middle {
+    flex: 5;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    text-align: center;
+}
+
+.center-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+
+.bottom {
+    flex: 5;
+    display: flex;
+    flex-flow: column;
+    margin-right: 15vw;
+    margin-left: 15vw;
+}
+
+.option-row {
+    flex: 1;
+    display: flex;
+    flex-flow: row;
+}
+
+.option-btn {
+    font-family: 'JoganSoft';
+    font-size: 1.4em;
+    flex: 1;
+    margin: 5px;
+    color: white;
+    border: none;
+    background-color: var(--positive);
+    border-radius: 10px;
+}
+
+.option-btn:hover {
+    background-color: var(--positive-2);
+}
