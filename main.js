@@ -193,6 +193,15 @@ const actions = [
         condition: "currentJob.company == 'Mafia'",
         successFunction: "notoriety += 2",
     },
+    {
+        name: 'Study hard at School',
+        maxRep: 5,
+        minRep: 0,
+        successMsg: ["You studied hard at school.", "You studied very hard.", "You practiced a lot of Maths questions."],
+        failMsg: ["No matter how hard you tried, nothing stuck in your head."],
+        condition: "currentJob.company == 'School'",
+        successFunction: "intelligence += getRandomNumber(0, 3)",
+    },
 ];
 
 const jobList = [
